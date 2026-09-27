@@ -1,0 +1,44 @@
+import { AntDesign, Entypo, Ionicons } from '@expo/vector-icons';
+import { Tabs } from 'expo-router';
+
+export default function TabLayout() {
+    return (
+        <Tabs
+            screenOptions={{
+                headerShown: false,
+                tabBarActiveTintColor: '#007AFF',
+                tabBarInactiveTintColor: '#8E8E93',
+            }}
+        >
+            <Tabs.Screen
+                name="index"
+                options={{
+                    title: 'Home',
+                    tabBarIcon: ({ color, size }) => (
+                        <Ionicons name="home-outline" size={size} color={color} />
+                    ),
+                }}
+            />
+
+            <Tabs.Screen
+                name="add-item"
+                options={{
+                    title: 'Add Item',
+                    tabBarIcon: ({ color, size }) => (
+                        <AntDesign name="plus" size={size} color={color} />
+                    ),
+                }}
+            />
+
+            <Tabs.Screen
+                name="list-item"
+                options={{
+                    title: 'List Item',
+                    tabBarIcon: ({ color, size }) => (
+                        <Entypo name="list" size={size} color={color} />
+                    ),
+                }}
+            />
+        </Tabs>
+    );
+}
